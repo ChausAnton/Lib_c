@@ -31,5 +31,9 @@ unsigned long mx_hex_to_nbr(const char *);
 
 void mx_foreach(const int *arr, int size, void (*f)(int));
 
+int mx_strcmp(const char *, const char *, int);
+
+int mx_binary_search(char **, int , const char *, int *);
+
 
 #endif
