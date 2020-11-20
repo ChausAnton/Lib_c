@@ -8,7 +8,7 @@ int mx_bubble_sort(char **arr, int size) {
             while(arr[i][length] != '\0'){
                 length++;
             }
-            if(mx_strcmp(arr[j], arr[j + 1], length) > 0) {
+            if(mx_strncmp(arr[j], arr[j + 1], length) > 0) {
                 char *temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;

@@ -39,5 +39,11 @@ int mx_bubble_sort(char **, int);
 
 int mx_strcmp(const char *, const char *);
 
+void mx_swap_char(char *, char *);
+
+void mx_str_reverse(char *);
+
+char *mx_itoa(int);
+
 
 #endif
