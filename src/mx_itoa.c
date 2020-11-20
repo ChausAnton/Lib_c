@@ -1,7 +1,7 @@
 #include "../inc/libmx.h"
 
 char *mx_itoa(int number) {
-    char *arr = mx_strnew(10);
+    char *arr = mx_strnew(12);
     bool min = false;
     unsigned int num = number;
     int i = 0;
@@ -18,5 +18,6 @@ char *mx_itoa(int number) {
     }
     if(min == true) arr[i] = '-';
     mx_str_reverse(arr);
+    arr[i + 1] = '\0';
     return arr;
 }
