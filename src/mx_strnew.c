@@ -1,4 +1,5 @@
-#include "nbr_to_hex.h"
+#include "../inc/libmx.h"
+
 char *mx_strnew(const int size) {
 
     char *str = (char*) malloc((size + 1) * sizeof(char));

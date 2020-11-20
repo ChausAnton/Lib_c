@@ -35,5 +35,7 @@ int mx_strcmp(const char *, const char *, int);
 
 int mx_binary_search(char **, int , const char *, int *);
 
+int mx_bubble_sort(char **, int);
+
 
 #endif

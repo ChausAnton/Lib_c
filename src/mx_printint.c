@@ -1,4 +1,4 @@
-void mx_printchar(char c);
+#include "../inc/libmx.h"
 
 void mx_printint(int n) {
     char c[55];
