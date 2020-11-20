@@ -18,13 +18,13 @@ int mx_binary_search(char **arr, int size, const char *s, int *count) {
             lenght = lenght2;
         }
         *count = *count + 1;
-        if (mx_strcmp(arr[mid], s, lenght) == 0) {
+        if (mx_strncmp(arr[mid], s, lenght) == 0) {
             return mid;
         }
-        else if (mx_strcmp(arr[mid], s, lenght) > 0) { 
+        else if (mx_strncmp(arr[mid], s, lenght) > 0) { 
             rigth = mid - 1;
         }
-        else if(mx_strcmp(arr[mid], s, lenght) < 0){
+        else if(mx_strncmp(arr[mid], s, lenght) < 0){
             left = mid + 1;
         }
     }
