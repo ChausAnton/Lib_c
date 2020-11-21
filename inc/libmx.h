@@ -55,4 +55,26 @@ char *mx_strndup(const char *, size_t);
 
 char *mx_strncpy(char *, const char *, int);
 
+char *mx_strcat(char *, const char *);
+
+char *mx_strstr(const char *, const char *);
+
+int mx_count_substr(const char *, const char *);
+
+int mx_count_words(char *);
+
+char *mx_strtrim(const char *str);
+
+bool mx_islower(int);
+
+bool mx_isupper(int);
+
+bool mx_isdigit(int);
+
+bool mx_isalpha(int);
+
+bool mx_isspace(char);
+
+char *mx_strchr(const char *, int);
+
 #endif

@@ -1,7 +1,7 @@
 #include "../inc/libmx.h"
 
 char *mx_strndup(const char *s1, size_t n) {
-    int lenght = mx_strlen(s1);
+    size_t lenght = mx_strlen(s1);
     if(n < lenght) lenght = n;
     char *DupStr = mx_strnew(lenght);
     if(DupStr == NULL) {
