@@ -45,5 +45,6 @@ void mx_str_reverse(char *);
 
 char *mx_itoa(int);
 
+char *mx_strcpy(char *, const char *);
 
 #endif

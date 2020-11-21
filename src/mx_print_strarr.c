@@ -7,4 +7,5 @@ void mx_print_strarr(char **arr, const char *delim) {
         if(arr[i + 1] != NULL)
             mx_printstr(delim);
     }
+    mx_printchar('\n');
 }
