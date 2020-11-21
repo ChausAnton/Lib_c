@@ -83,4 +83,6 @@ char *mx_strjoin(char const *, char const *);
 
 char *mx_file_to_str(const char *filename);
 
+void mx_del_strarr(char ***);
+
 #endif
