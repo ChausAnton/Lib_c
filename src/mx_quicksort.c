@@ -24,7 +24,6 @@ int mx_quicksort(char **arr, int left, int right) {
                 left_temp++;
             }
         }
-
         counter += mx_quicksort(arr, left, right_temp);
         counter += mx_quicksort(arr, left_temp, right);
     }    

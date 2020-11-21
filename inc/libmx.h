@@ -47,4 +47,12 @@ char *mx_itoa(int);
 
 char *mx_strcpy(char *, const char *);
 
+void mx_strdel(char **);
+
+char *mx_strdup(const char *);
+
+char *mx_strndup(const char *, size_t);
+
+char *mx_strncpy(char *, const char *, int);
+
 #endif
