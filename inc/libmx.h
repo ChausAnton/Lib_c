@@ -61,7 +61,7 @@ char *mx_strstr(const char *, const char *);
 
 int mx_count_substr(const char *, const char *);
 
-int mx_count_words(char *);
+int mx_count_words(const char *, char);
 
 char *mx_strtrim(const char *str);
 
@@ -76,5 +76,11 @@ bool mx_isalpha(int);
 bool mx_isspace(char);
 
 char *mx_strchr(const char *, int);
+
+char **mx_strsplit(char const *, char);
+
+char *mx_strjoin(char const *, char const *);
+
+char *mx_file_to_str(const char *filename);
 
 #endif
