@@ -81,10 +81,14 @@ char **mx_strsplit(char const *, char);
 
 char *mx_strjoin(char const *, char const *);
 
-char *mx_file_to_str(const char *filename);
+char *mx_file_to_str(const char *);
 
 void mx_del_strarr(char ***);
 
 int mx_get_char_index(const char *, char);
+
+int mx_get_substr_index(const char *, const char *);
+
+char *mx_del_extra_spaces(const char *);
 
 #endif
