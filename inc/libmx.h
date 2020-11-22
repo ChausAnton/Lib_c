@@ -85,4 +85,6 @@ char *mx_file_to_str(const char *filename);
 
 void mx_del_strarr(char ***);
 
+int mx_get_char_index(const char *, char);
+
 #endif
