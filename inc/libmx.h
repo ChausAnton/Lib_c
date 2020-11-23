@@ -93,4 +93,8 @@ char *mx_del_extra_spaces(const char *);
 
 int mx_read_line(char **, size_t, char, const int);
 
+void *mx_memset(void *, int, size_t);
+
+void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
+
 #endif
