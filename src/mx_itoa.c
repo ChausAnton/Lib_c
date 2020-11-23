@@ -9,7 +9,7 @@ char *mx_itoa(int number) {
     }
     
     char *arr = NULL;
-    arr = mx_strnew(lenght);;
+    arr = mx_strnew(lenght);
     bool min = false;
     num = number;
     int i = 0;

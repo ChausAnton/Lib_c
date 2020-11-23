@@ -91,4 +91,6 @@ int mx_get_substr_index(const char *, const char *);
 
 char *mx_del_extra_spaces(const char *);
 
+int mx_read_line(char **, size_t, char, const int);
+
 #endif
