@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <wchar.h>
 #include "hex_to_nbr.h"
 #include "nbr_to_hex.h"
 
@@ -131,5 +132,9 @@ void mx_pop_back(t_list **);
 int mx_list_size(t_list *);
 
 t_list *mx_sort_list(t_list *, bool (*)(void *, void *));
+
+void mx_print_unicode(wchar_t);
+
+void mx_print_unicode(wchar_t);
 
 #endif
