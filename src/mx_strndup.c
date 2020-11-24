@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 char *mx_strndup(const char *s1, size_t n) {
     size_t lenght = mx_strlen(s1);

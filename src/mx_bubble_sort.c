@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 int mx_bubble_sort(char **arr, int size) {
     int count_op = 0;

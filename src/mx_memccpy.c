@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n) {
     unsigned char *dst_temp = (unsigned char *)dst;
     unsigned char *src_temp = (unsigned char *)src;

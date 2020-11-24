@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 unsigned long mx_hex_to_nbr(const char *hex) {
 	if (hex == NULL) return 0;

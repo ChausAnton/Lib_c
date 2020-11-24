@@ -1,15 +1,27 @@
-.PHONY: clean all
+all: copy LIBMX create_lib clean
 
-SOURCE := src
+copy:
+	@mkdir obj
+	@cp inc/*.h obj
+	@cp src/*.c obj
 
-all: T00
- 
-T00:
-	clang -std=c11 -Wall -Wextra -Werror -Wpedantic $(SOURCE)/*.c -o mx_cp
+LIBMX:
+	@clang -std=c11 -Wall -Wextra -Werror -Wpedantic -c obj/*.c
 
-uninstall: clean
+create_lib:
+	@ar -src libmx.a *.o
+	@ranlib libmx.a
+	@cp *.o obj
 
-reinstall: clean all
+uninstall:
+	@rm -rf obj
+	@rm libmx.a
 
 clean:
-	rm -f mx_cp
+	@rm -r *.o
+	@rm -r ./obj/*.c
+	@rm -r ./obj/*.h
+
+reinstall:
+	@make uninstall
+	@make

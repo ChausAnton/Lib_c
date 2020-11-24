@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 char *mx_strjoin(char const *s1, char const *s2) {
     if (s1 == NULL && s2 == NULL) {
