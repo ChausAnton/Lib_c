@@ -5,11 +5,11 @@ copy:
 	@cp inc/*.h obj
 	@cp src/*.c obj
 
-LIBMX:
+LIBMX: $(libmx.a)
 	@clang -std=c11 -Wall -Wextra -Werror -Wpedantic -c obj/*.c
 
 create_lib:
-	@ar -src libmx.a *.o
+	@ar -rcs libmx.a *.o
 	@ranlib libmx.a
 	@cp *.o obj
 
