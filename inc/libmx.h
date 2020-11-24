@@ -10,6 +10,11 @@
 #include "hex_to_nbr.h"
 #include "nbr_to_hex.h"
 
+typedef struct s_list {
+    void *data;
+    struct s_list *next;
+}   t_list;
+
 
 int mx_strlen(const char *);
 
@@ -95,20 +100,36 @@ int mx_read_line(char **, size_t, char, const int);
 
 void *mx_memset(void *, int, size_t);
 
-void *mx_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void *mx_memcpy(void *restrict, const void *restrict, size_t);
 
-void *mx_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+void *mx_memccpy(void *restrict, const void *restrict, int, size_t);
 
-int mx_memcmp(const void *s1, const void *s2, size_t n);
+int mx_memcmp(const void *, const void *, size_t);
 
-void *mx_memchr(const void *s, int c, size_t n);
+void *mx_memchr(const void *, int , size_t);
 
-void *mx_memrchr(const void *s, int c, size_t n);
+void *mx_memrchr(const void *, int, size_t);
 
-void *mx_memmem(const void *big, size_t big_len, const void *little, size_t little_len);
+void *mx_memmem(const void *, size_t , const void *, size_t);
 
-void *mx_memmove(void *dst, const void *src, size_t len);
+void *mx_memmove(void *, const void *, size_t);
 
-void *mx_realloc(void*ptr, size_t size);
+void *mx_realloc(void *, size_t);
+
+t_list *mx_create_node(void *);
+
+void mx_push_front(t_list **, void *);
+
+void mx_push_back(t_list **, void *);
+
+void mx_pop_front(t_list **);
+
+void mx_pop_back(t_list **);
+
+void mx_pop_back(t_list **);
+
+int mx_list_size(t_list *);
+
+t_list *mx_sort_list(t_list *, bool (*)(void *, void *));
 
 #endif
