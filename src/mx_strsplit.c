@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 char **mx_strsplit(char const *s, char c) {
     if (s == NULL) return NULL;

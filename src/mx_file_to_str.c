@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 char *mx_file_to_str(const char *filename) {
     int src = open(filename, O_RDONLY);

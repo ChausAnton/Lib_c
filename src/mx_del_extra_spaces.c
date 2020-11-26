@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 char *mx_del_extra_spaces(const char *str) {
     if(str == NULL) return NULL;

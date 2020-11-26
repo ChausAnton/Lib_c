@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 char *mx_nbr_to_hex(unsigned long nbr) {
     unsigned long temp = 0;

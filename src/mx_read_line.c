@@ -1,60 +1,39 @@
-#include "../inc/libmx.h"
-
-char *mx_join_for_read_line(char *s1, char const *s2) {
-    if (s1 == NULL && s2 == NULL) {
-        return NULL;
-    }
-
-    int length1 = 0;
-    if(s1 != NULL) {
-        length1 = mx_strlen(s1);
-    }
-
-    int length2 = 0;
-    if(s2 != NULL) {
-        length2 = mx_strlen(s2);
-    }
-
-    char *str = mx_strnew(length1 + length2);
-    if (str == NULL) {
-        return NULL;
-    }
-
-    if(s1 != NULL)
-        mx_strcat(str, s1);
-    if(s2 != NULL)
-        mx_strcat(str, s2);
-
-    mx_strdel(&s1);///////
-    return str;
-
-}
-
+#include "libmx.h"
 
 int mx_read_line(char **lineptr, size_t buf_size, char delim, const int fd) {
     if (buf_size < 0 || fd < 0) return -2;
-    buf_size = 1;
-    int byte = 0;
-    char buf;
-    int length = 0;
-    mx_strdel(lineptr);
 
-    if ((byte = read(fd, &buf, buf_size)) > 0){
-        *lineptr = mx_join_for_read_line(*lineptr, &buf);
+    (*lineptr) = (char *) mx_realloc(*lineptr, buf_size);
+    mx_memset((*lineptr), '\0', malloc_size((*lineptr)));
+   
+    size_t bytes = 0;
+    char buf;
+
+    if (read(fd, &buf, 1)) {
+        if (buf == delim)
+            return bytes;
+
+        (*lineptr) = (char *) mx_realloc(*lineptr, bytes + 1);
+        (*lineptr)[bytes] = buf;
+        bytes++;
     }
-    else {
-        return -1;
+    else return -1;
+
+    while (read(fd, &buf, 1)) {
+        if (buf == delim)
+            break;
+        if (bytes >= buf_size)
+            (*lineptr) = (char *) mx_realloc(*lineptr, bytes + 1);
+
+        (*lineptr)[bytes] = buf;
+
+        bytes++;
     }
-    while((byte = read(fd, &buf, buf_size)) > 0) {
-        if(delim == buf) break;
-        if(length == 0) length++;
-        length += byte;
-        *lineptr = mx_join_for_read_line(*lineptr, &buf);
-    }
-    if(length == 0) {
-        mx_strdel(lineptr);
-        *lineptr = "";
-    }
-    buf_size = (size_t)length;
-    return buf_size;
+
+    (*lineptr) = (char *) mx_realloc(*lineptr, bytes + 1);
+
+    size_t free_bytes = malloc_size((*lineptr)) - bytes; 
+    mx_memset(&(*lineptr)[bytes], '\0', free_bytes);
+
+    return bytes + 1;
 }

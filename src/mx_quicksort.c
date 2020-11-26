@@ -1,4 +1,4 @@
-#include "../inc/libmx.h"
+#include "libmx.h"
 
 int mx_quicksort(char **arr, int left, int right) {
     if (arr == NULL) return -1;
