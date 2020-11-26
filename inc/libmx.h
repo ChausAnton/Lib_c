@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <wchar.h>
+#include <malloc/malloc.h>
 #include "hex_to_nbr.h"
 #include "nbr_to_hex.h"
 

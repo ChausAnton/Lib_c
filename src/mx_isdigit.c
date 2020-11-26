@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 bool mx_isdigit(int c) {
     if (48 <= c && c <= 57) {

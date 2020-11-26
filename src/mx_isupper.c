@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 bool mx_isupper(int c) {
     if (65 <= c && c <= 90) {

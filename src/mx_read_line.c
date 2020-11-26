@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 char *mx_join_for_read_line(char *s1, char const *s2) {
     if (s1 == NULL && s2 == NULL) {
