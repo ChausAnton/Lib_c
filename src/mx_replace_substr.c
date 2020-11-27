@@ -10,7 +10,7 @@ char *mx_replace_substr(const char *str, const char *sub, const char *replace) {
     char *temp2 = mx_strndup(temp, index);
     temp2 = mx_strjoin(temp2, replace);
 
-    for (int i = 0; i <= (index + mx_strlen(sub) - 1); i++) {
+    for (int i = 0; i < (index + mx_strlen(sub)); i++) {
         temp++;
     }
 
@@ -18,7 +18,7 @@ char *mx_replace_substr(const char *str, const char *sub, const char *replace) {
 
     mx_strdel(&temp2);
 
-    for (int i = 0; i <= (index + mx_strlen(sub) - 1); i++) {
+    for (int i = 0; i < (index + mx_strlen(sub)); i++) {
         temp--;
     }
     mx_strdel(&temp);

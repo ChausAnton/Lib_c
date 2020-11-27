@@ -138,4 +138,6 @@ void mx_print_unicode(wchar_t);
 
 void mx_print_unicode(wchar_t);
 
+char *mx_replace_substr(const char *, const char *, const char *);
+
 #endif
